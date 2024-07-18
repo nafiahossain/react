@@ -1,0 +1,365 @@
+/*
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+*/
+
+/*Navbar*/
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 20px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  flex-direction: column;
+}
+.navbar-search-container {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  border-radius: 30px;
+  padding: 5px 15px;
+  max-width: 420px;
+  width: 100%;
+}
+.anywhere-btn-class {
+  background-color: white;
+  border: none;
+  outline: none;
+  border-radius: 100%;
+  padding: 10px;
+  width: 100%;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.navbar-search-container button:hover {
+  background-color: #ddd;
+}
+.navbar-search-container a {
+  margin-right: 10px;
+  text-decoration: none;
+  text-align:center;
+  color: black;
+}
+.navbar-search-container p {
+  padding-left: 5px;
+  padding-right: 5px;
+  margin-right: 10px;
+  text-align:center;
+  text-decoration: none;
+  color: gray;
+}
+.search-input {
+  border: none;
+  outline: none;
+  padding: 8px;
+  width: 100%;
+  font-size: 16px;
+}
+.search-button {
+  background-color: #FF385C;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 55px;
+  height: 25px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.menu-icons {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  right: 100px;
+}
+.menu-icon {
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+/*expanded container*/
+.expanded-container {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+}
+.expanded-search {
+  background-color: white;
+  border-radius: 30px;
+  margin-top: 10px;
+  padding: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  /*
+  display: none;
+  */
+}
+.search-options {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.search-options p{
+  color: gray;
+}
+.search-options button {
+  background: none;
+  border: 1px solid #ddd;
+  padding: 5px 15px;
+  border-radius: 20px;
+  cursor: pointer;
+  margin: 5px;
+}
+.search-options button:hover {
+  
+  background-color: #ddd;
+  
+}
+#search-btn {
+  background-color: #ff385c;
+  color: white;
+}
+
+/*search by region portion*/
+.region-flex {
+  position: absolute;
+  margin: 10px auto;
+  left: 0;
+  width: 400px;
+  background-color: white;
+  padding: 10px;
+  border-radius: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  /*
+  display: none;
+  */
+  z-index: 10;
+}
+.region-items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.region-item {
+  flex-basis: calc(33.333% - 10px);
+  text-align: center;
+  margin-bottom: 0px;
+  border: none;
+  background-color: white;
+  border-radius: 20px;
+  cursor: pointer;
+  padding: 10px;
+}
+.region-item:hover {
+  background-color: #ddd;
+}
+.region-item img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/*check-in check-out calendar*/
+.calendar {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 600px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+ 
+  z-index: 10;
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.calendar-body {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+}
+
+.calendar-day {
+  text-align: center;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.calendar-day:hover {
+  background-color: #f0f0f0;
+}
+
+.calendar-day.selected {
+  background-color: #ff385c;
+  color: white;
+}
+.calendar-day.disabled {
+  color: #ccc;
+  pointer-events: none;
+}
+.date-range-options {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.date-range-btn {
+  background: none;
+  border: 1px solid #ddd;
+  padding: 5px 10px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.date-range-btn.selected {
+  background-color: #ff385c;
+  color: white;
+}
+
+/*add guests*/
+.guest-selection {
+  position: absolute;
+  right: 0;
+  background-color: white;
+  
+  margin: 10px;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
+
+.guest-type {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.guest-info h3 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.guest-info p {
+  margin: 5px 0 0;
+  font-size: 14px;
+  color: #717171;
+}
+
+.guest-controls {
+  display: flex;
+  align-items: center;
+}
+
+.guest-controls button {
+  width: 32px;
+  height: 32px;
+  border: 1px solid #ddd;
+  background-color: white;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.guest-controls button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.guest-controls .count {
+  margin: 0 10px;
+  font-size: 16px;
+}
+
+/*
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+
+*/
+
+@media (max-width: 768px) {
+  /*nav-bar menu*/
+  .menu-icons {
+      display: none;
+  }
+
+  /*expanded search*/
+  .search-options {
+      flex-direction: column;
+  }
+  .search-options p {
+      display: none;
+  }
+
+  /*search bu region*/
+  .region-flex {
+      width: 100%;
+      left: 0;
+      right: 0;
+  }
+  .region-item {
+      flex-basis: calc(50% - 10px);
+  }
+  /*check-in check-out calendar*/
+  .calendar {
+      width: 100%;
+  }
+  .date-range-options {
+      flex-wrap: wrap;
+  }
+  .date-range-btn {
+      margin: 5px;
+  }
+}
